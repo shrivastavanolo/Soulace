@@ -1,0 +1,120 @@
+/* AuthPage.css */
+
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .auth-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .auth-container h2 {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-bottom: 15px;
+  }
+  
+  .auth-type-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .auth-type-toggle button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-type-toggle button:hover {
+    background-color: #2980b9;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s;
+  }
+  
+  form input:focus {
+    border-color: #3498db;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  button {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  button:hover {
+    background-color: #229954;
+    transform: scale(1.05);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  h3 {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #34495e;
+  }
+  
+  .auth-container form input[type="text"],
+  .auth-container form input[type="email"],
+  .auth-container form input[type="password"] {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 500px) {
+    .auth-container {
+      padding: 20px;
+    }
+  
+    .auth-container h1 {
+      font-size: 1.75rem;
+    }
+  
+    .auth-container h2 {
+      font-size: 1.25rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

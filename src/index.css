@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'pacifico';
+  src: url('./assets/Pacifico-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Styles */
+body {
+  padding:0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #E0E0E0; /* Light gray text */
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #1F1F1F; /* Darker gray */
+  border-bottom: 3px solid #FFD700; /* Yellow border */
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: #FFD700; /* Yellow */
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: #FFD700; /* Yellow */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00; /* Lighter yellow */
+}
+
+/* Main Section Styles */
+main {
+  flex: 1;
+  padding: 2rem 0; /* Vertical padding for sections */
+}
+
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 3.5rem; /* Large font size for the title */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+/* Button Styles */
+button {
+  padding: 0.75rem 2rem;
+  border-radius: 30px; /* Rounded buttons */
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary {
+  background-color: #FFD700; /* Yellow */
+  color: #121212; /* Dark text */
+}
+
+.button-primary:hover {
+  background-color: #ffcc00; /* Lighter yellow */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: #34C1C3; /* Turquoise */
+  border: 2px solid #34C1C3; /* Turquoise border */
+}
+
+.button-secondary:hover {
+  background-color: #34C1C3; /* Turquoise */
+  color: #121212; /* Dark text */
+}
+
+/* Input Styles */
+input {
+  background-color: #222; /* Dark input background */
+  border: 1px solid #444; /* Slightly lighter border */
+  color: #fff; /* White text */
+  padding: 0.75rem;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px; /* Limit input width */
+  margin: 0.5rem auto;
+}
+
+input::placeholder {
+  color: #bbb; /* Light gray placeholder */
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 0; /* Uniform padding */
+  position: relative; /* For absolute children */
+}
+
+/* Features Section Styles */
+#features {
+  background-color: #1F1F1F; /* Darker background for features */
+}
+
+#features h2 {
+  color: #FFD700; /* Yellow */
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* About Section Styles */
+#about {
+  background-color: #272727; /* Slightly lighter dark background */
+}
+
+#about h2 {
+  color: #FFD700; /* Yellow */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  margin-bottom: 1rem;
+  max-width: 800px; /* Limit text width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Section Styles */
+#contact {
+  background-color: #1F1F1F; /* Darker gray for contact */
+  padding: 4rem 0;
+}
+
+#contact h2 {
+  color: #FFD700; /* Yellow */
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1F1F1F; /* Darker footer */
+  color: #bbb; /* Light gray */
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: #34C1C3; /* Turquoise */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #FFD700; /* Yellow */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+
+  button {
+    width: 100%; /* Full width buttons on small screens */
+  }
+
+  nav a {
+    margin: 0 0.5rem; /* Reduce margin for smaller screens */
+  }
+}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.random{
+  font-family: pacifico
+}
+
+.random2 {
+  margin: auto;
+  text-align: center;
+}
