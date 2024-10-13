@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button"
 
 
-const API_KEY = "AIzaSyAIOswygXlki-ePzButAI9MKzgsntdvf1g"
+const API_KEY = ""
 const MAX_RETRIES = 100
 const RETRY_DELAY = 1000
 

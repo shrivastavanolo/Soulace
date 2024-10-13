@@ -1,6 +1,6 @@
 # Soulace: Putting Soul into Education
 
-<div align="center"> <img src="assets/logo.png" alt="Screenshot of Student Dashboard" width="300"/></div>
+<div align="center"> <img src="public/logo.png" alt="Screenshot of Student Dashboard" width="300"/></div>
 
 Welcome to Soulace, an innovative web application designed to enhance the educational experience for both students and parents. At Soulace, we believe that learning is a journey best undertaken together. Our platform fosters collaboration between parents and children, providing a range of tools to support learning, engagement, and academic success.
 
