@@ -1,6 +1,8 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react'
 import { Menu, Send, Loader2 } from 'lucide-react'
 import { GoogleGenerativeAI } from "@google/generative-ai"
+import { LogOut } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const API_KEY = "AIzaSyBkRsnX8QgeXR3DeBYAAnqaCT1ekjEM55c"
 const MAX_RETRIES = 100
@@ -102,26 +104,41 @@ export default function Tips2() {
     }
   }, [showChat])
 
+  const handleLogout = () => {
+    navigate('/');
+  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <header className="bg-teal-900 p-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <img
-            className="h-14 w-14 text-yellow-400"
-            src="logo.png"
-            alt="Soulace logo"
-          />
-          <h1 className="text-3xl font-bold random">Soulace</h1>
-        </div>
-        <button 
-          className="md:hidden" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-      </header>
+    <header className="bg-teal-900 p-4 flex justify-between items-center">
+    <Link to="/parent" className="flex items-center space-x-2">
+      <img
+        className="h-14 w-14 text-yellow-400"
+        src="/logo.png"
+        alt="Soulace logo"
+      />
+      <h1 className="text-3xl font-bold random">Soulace</h1>
+    </Link>
 
+    <button 
+      className="md:hidden" 
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      aria-label="Toggle menu"
+    >
+      <Menu className="h-6 w-6" />
+    </button>
+  </header>
+  {/* {isMenuOpen && (
+    // <nav className="bg-teal-900 p-4 md:hidden random">
+    //   <Button variant="ghost" onClick={handleLogout} className="w-full justify-start">
+    //     <LogOut className="mr-2 h-4 w-4" />
+    //     Log out
+    //   </Button>
+    // </nav>
+  )} */}
       <main className="container mx-auto px-4 py-8">
         <h2 className="text-3xl font-bold mb-6 text-center">Expert Parenting Tips</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

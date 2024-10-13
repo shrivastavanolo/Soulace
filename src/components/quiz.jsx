@@ -1,8 +1,11 @@
 import React, { useState, useCallback } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Menu, Loader2 } from "lucide-react";
+import { LogOut } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from "@/components/ui/button"
 
-const API_KEY = "AIzaSyBkRsnX8QgeXR3DeBYAAnqaCT1ekjEM55c";
+const API_KEY = "AIzaSyAIOswygXlki-ePzButAI9MKzgsntdvf1g";
 const MAX_RETRIES = 100;
 const RETRY_DELAY = 1000;
 
@@ -20,7 +23,7 @@ function Quiz() {
 
   const generateQuizPrompt = (subject, classLevel) => `
     Generate a quiz with 10 multiple-choice high difficulty questions for a ${classLevel} student studying ${subject}.
-    For each question, provide 4 options (A, B, C, D) with one correct answer.
+    For each question, provide 4 options (A, B, C, D) with one correct answer. 
     Format:
 
     1. [Question]
@@ -30,7 +33,7 @@ function Quiz() {
     D) [Option D]
     Correct: [Correct option letter]
 
-    Repeat this format for all 10 questions.
+    Repeat this format for all 10 questions. Do not use astericks or *
   `;
 
   const parseQuizData = (text) => {
@@ -54,6 +57,7 @@ function Quiz() {
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = response.text();
+      console.log(text);
       const parsedData = parseQuizData(text);
       
       if (parsedData.length !== 10) {
@@ -97,18 +101,47 @@ function Quiz() {
     }
   };
 
+  const handleLogout = () => {
+    navigate('/');
+  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <header className="bg-teal-700 p-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <img
-            className="h-14 w-14 text-yellow-400"
-            src="/logo.png"
-            alt="Soulace logo"
-          />
-          <h1 className="text-3xl font-bold random">Soulace</h1>
-        </div>
-      </header>
+    <header className="bg-teal-700 p-4 flex justify-between items-center">
+    <Link to="/student" className="flex items-center space-x-2">
+      <img
+        className="h-14 w-14 text-yellow-400"
+        src="/logo.png"
+        alt="Soulace logo"
+      />
+      <h1 className="text-3xl font-bold random">Soulace</h1>
+    </Link>
+    <nav className="hidden md:flex space-x-4 items-center random">
+      <Button variant="ghost" onClick={handleLogout}>
+        <LogOut className="mr-2 h-4 w-4" />
+        Log out
+      </Button>
+    </nav>
+    <button 
+      className="md:hidden" 
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      aria-label="Toggle menu"
+    >
+      <Menu className="h-6 w-6" />
+    </button>
+  </header>
+  {isMenuOpen && (
+    <nav className="bg-teal-700 p-4 md:hidden random">
+      <Button variant="ghost" onClick={handleLogout} className="w-full justify-start">
+        <LogOut className="mr-2 h-4 w-4" />
+        Log out
+      </Button>
+    </nav>
+  )}
+
       <main className="container mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
