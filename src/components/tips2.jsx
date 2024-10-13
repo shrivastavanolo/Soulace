@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import { LogOut } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const API_KEY = "AIzaSyBkRsnX8QgeXR3DeBYAAnqaCT1ekjEM55c"
+const API_KEY = ""
 const MAX_RETRIES = 100
 const RETRY_DELAY = 1000
 
